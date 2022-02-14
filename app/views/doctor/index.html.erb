@@ -1,0 +1,22 @@
+<html>
+	<body>
+
+	<h1>The list of doctors:</h1>
+	<table border = "1">
+	<tr>
+	<td width="30%"><p align="center"><i><b>Name</b></i></td>
+		<td width="35%"><p align="center"><i><b>Surname</b></i></td>
+			<td width="55%"><p align="center"><i><b>Specialisation</b></i></td>
+	</tr>
+
+	<% @doctors.each do |doctor| %>
+	<tr>
+	<td><%= doctor.first_name %></td>
+	<td><%= doctor.last_name %></td>
+	<td><%= doctor.specialisation %></td>
+	</tr>
+	<% end %>
+	</table>
+	</body>
+
+</html>
