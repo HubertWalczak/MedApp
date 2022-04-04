@@ -1,22 +1,27 @@
-<html>
-	<body>
-
-	<h1>The list of doctors:</h1>
-	<table border = "1">
-	<tr>
-	<td width="30%"><p align="center"><i><b>Name</b></i></td>
-		<td width="35%"><p align="center"><i><b>Surname</b></i></td>
-			<td width="55%"><p align="center"><i><b>Specialisation</b></i></td>
-	</tr>
-
-	<% @doctors.each do |doctor| %>
-	<tr>
-	<td><%= doctor.first_name %></td>
-	<td><%= doctor.last_name %></td>
-	<td><%= doctor.specialisation %></td>
-	</tr>
-	<% end %>
-	</table>
-	</body>
-
-</html>
+<div class='container-fluid'>
+	<div class='row py-4 px-5'>
+		<div class='col-12 col-sm-5'>
+			<h3 class=''>The list of doctors:</h3>
+			<table class="table table-bordered border-success table-hover table-success table-striped">
+			  <thead>
+			    <tr class="table-active">
+			      <th scope="col">#</th>
+			      <th scope="col">First Name</th>
+			      <th scope="col">Last Name</th>
+			    </tr>
+			  </thead>
+			  <tbody>
+			  	<% @doctors.each do |doctor| %>
+			  		<tr>
+			  			<td><%= link_to doctor.id, doctor %></td>
+			  			<td><%= doctor.first_name %></td>
+			  			<td><%= doctor.last_name %></td>
+			  		</tr>
+			  	<% end %>
+			  </tbody>
+			</table>
+		</div>
+	</div>
+</div>
+<ul><ul><%= link_to "New Doctor", new_doctor_path, class:"btn btn-secondary" %></ul></ul>
+  

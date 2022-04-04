@@ -1,21 +1,17 @@
-<html>
-	<body>
+<div class='row py-4 px-5'>
+	<div class='col-12 col-sm-3'>
+		<div class="card">
+		  <div class="card-header">
+		    <%= image_tag "photo.jpg", height: 150 %>
+		  </div>
+		  <div class="card-body">
+		    <h5 class="card-title"><%= @doctor.first_name %> <%= @doctor.last_name %></h5>
+		    <p class="card-text">Specialisation: <%= @doctor.specialisation %></p>
+		  </div>
+		</div>
+		<br>
+		<%= link_to "Edit", edit_doctor_path, class:"btn btn-secondary" %>
+		<%= link_to "Back", doctors_path, class:"btn btn-secondary" %>
 
-	<h1>The lis of doctors:</h1>
-	<table border = "1">
-	<tr>
-	<td width="30%"><p align="center"><i><b>Name</b></i></td>
-		<td width="35%"><p align="center"><i><b>Surname</b></i></td>
-			<td width="55%"><p align="center"><i><b>Specialisation</b></i></td>
-	</tr>
-
-	<% @doctors.each do |doctor| %>
-	<tr>
-	<td><%= link_to doctor.first_name, :action => "list", :id => doctor.id %></td>
-	<td><%= doctor.created_at %></td>
-	</tr>
-	<% end %>
-	</table>
-	</body>
-
-</html>
+	</div>
+</div>

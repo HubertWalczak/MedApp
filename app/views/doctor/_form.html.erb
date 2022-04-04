@@ -1,0 +1,29 @@
+<div class="title-container">
+  <%= form_with model: doctor do |form| %>
+    <div>
+      <%= form.label :first_name %><br>
+      <%= form.text_field :first_name %>
+      <% doctor.errors.full_messages_for(:first_name).each do |message| %>
+        <div><%= message %></div>
+      <% end %>
+    </div>
+
+    <div>
+      <%= form.label :last_name %><br>
+      <%= form.text_field :last_name %><br>
+      <% doctor.errors.full_messages_for(:last_name).each do |message| %>
+        <div><%= message %></div>
+      <% end %>
+    </div>
+
+    <div>
+      <%= form.label :specialisation %><br>
+      <%= form.text_field :specialisation %>
+    </div>
+
+    <div>
+      <br><%= form.submit class:"btn btn-secondary" %>
+    </div>
+  <% end %>
+</div>
+

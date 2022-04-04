@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  root 'home#index'
-
+  root "doctor#welcome"
   get "/doctors", to: "doctor#index"
-  get "/doctors/:id", to: "doctor#show"
+  get "/home", to: "doctor#home"
+  resources :doctor
 end
